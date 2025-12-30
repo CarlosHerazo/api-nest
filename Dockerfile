@@ -26,7 +26,7 @@ COPY --from=build /app/package*.json ./
 # Instalar solo dependencias de producción
 RUN npm install --production
 
-EXPOSE 3000
+EXPOSE 3001
 
 # Ejecutar la app
 CMD ["node", "dist/src/main.js"]
