@@ -25,7 +25,8 @@ services:
       db:
         condition: service_healthy
     environment:
-      DATABASE_URL: postgres://appuser:apppass@db:5432/taskdb
+      DATABASE_URL: "postgresql://appuser:apppass@db:5432/taskdb?schema=public"
+
       NODE_ENV: development
     ports:
       - "3001:3000"
