@@ -22,6 +22,7 @@ WORKDIR /app
 # Copiar solo lo necesario desde la etapa build
 COPY --from=build /app/dist ./dist
 COPY --from=build /app/package*.json ./
+COPY --from=build /app/prisma ./prisma
 
 # Instalar solo dependencias de producción
 RUN npm install --production
