@@ -5,12 +5,10 @@ WORKDIR /app
 # Copiar package.json y lock
 COPY package*.json ./
 RUN npm install
-
-# Generar Prisma client antes de build
-RUN npx prisma generate
-
 # Copiar el resto del código
 COPY . .
+# Generar Prisma client antes de build
+RUN npx prisma generate
 
 # Compilar TS
 RUN npm run build
